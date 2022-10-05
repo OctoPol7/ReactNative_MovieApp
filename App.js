@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NativeBaseProvider } from "native-base";
+
+import MoviesListContainer from "./components/containers/MoviesListContainer";
+import AppStack from "./components/stacks/AppStack";
+import NavigationStack from "./components/stacks/NavigationStack";
+import Header from "./components/Layout/Header";
+import NavigationBar from "./components/Layout/NavigationBar";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <AppStack />
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
